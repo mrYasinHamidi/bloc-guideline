@@ -6,8 +6,10 @@ We have three main parameters in Bloc:
 * State class
 * Event Class
 
-Next, I want to talk about the rules and principles. Our goal is to use Bloc State Management in a uniform and integrated way within our team.
-This repo contains an example code that all the following notes are considered.
+>This repository includes example code that incorporates all the following notes. After reading this introduction, please examine the code. 
+
+I want to talk about the rules and principles. Our goal is to use Bloc State Management in a uniform and integrated way within our team.
+
 
 ### Event creation
 For each task that the bloc is going to perform, we should have one specific Event.
