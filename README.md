@@ -1,9 +1,9 @@
-# State Management (Bloc)
+# State Management (BloC)
 
-We have three main parameters in Bloc:
+We have three main parameters in our BloC:
 
-* Bloc class
-* State class
+* Bloc Class
+* State Class
 * Event Class
 
 >This repository includes example code that incorporates all the following notes. After reading this introduction, please examine the code. 
@@ -11,30 +11,29 @@ We have three main parameters in Bloc:
 I want to talk about the rules and principles. Our goal is to use Bloc State Management in a uniform and integrated way within our team.
 
 
-### Event creation
+### Event Creation
 For each task that the bloc is going to perform, we should have one specific Event.
 
-### State creation
-We create our States using the Multi-State approach. This means that we can have multiple State classes for one Bloc.
+### State Creation
+We employ the Multi-State approach to create our states, allowing us to have multiple state classes for a single bloc.
 
 Consider the following points when creating your States:
 
 * Have one parent class and multiple subclasses.
-* All of your states should extend from the parent class.
-* The parent class should be a Sealed class.
-* Your State represents your data, and you should not hold any data inside the Bloc.
+* Ensure all states extend from the parent class, which should be sealed.
+* Remember, your state is responsible for representing your data; avoid holding any data inside the Bloc.
 
 
 
 
 
-### Parent state
-Our parent state is a sealed class and so we can not create any instance from it. Instead, we create some other subclasses from it and use them. Inside this parent class, we set variables that we want to hold across the bloc lifecycle.
+### Parent State
+Our parent state is a sealed class, meaning no instances can be created from it. Instead, we create subclasses from it and use them. Inside this parent class, we define variables that we want to hold across the bloc lifecycle.
 The parent state should extend from Equatable.
 
 ### Sub States
 Sub-states contain data that we don't want to persist across the entire Bloc lifecycle. This data will only remain within the lifecycle of the State. This means that when a new state is emitted, the previous state and its data will be lost.
-Note that add properties to the prop list of equitable in all Sub-States
+Ensure that properties are added to the prop list of Equatable for all Sub-States.
 
 
 
@@ -42,7 +41,7 @@ Note that add properties to the prop list of equitable in all Sub-States
 # Naming Conventions
 
 ### Event Conventions
-Events should be named in the past tense because events are things that have already occurred from the bloc's perspective.
+Events should be named in the past tense because events represent actions that have already occurred from the bloc's perspective.
 
 Anatomy :  `Bloc Subject + Noun (Optional) + verb (event)`  
 Initial load events should follow the convention: `Bloc Subject + Started`
