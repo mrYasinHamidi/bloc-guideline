@@ -33,9 +33,8 @@ The parent state should extend from Equatable.
 
 ### Sub States
 Sub-states contain data that we don't want to persist across the entire Bloc lifecycle. This data will only remain within the lifecycle of the State. This means that when a new state is emitted, the previous state and its data will be lost.
-Ensure that properties are added to the prop list of Equatable for all Sub-States.
-
-
+Ensure that properties are added to the prop list of Equatable for all Sub-States.  
+>Ensuare that you also add parent properies to child props (Equatable props) list.   
 
 
 # Naming Conventions
