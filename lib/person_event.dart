@@ -1,6 +1,6 @@
 part of 'person_bloc.dart';
 
-abstract class PersonEvent {
+sealed class PersonEvent {
   const PersonEvent();
 }
 

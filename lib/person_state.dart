@@ -1,6 +1,6 @@
 part of 'person_bloc.dart';
 
-abstract class PersonState extends Equatable {
+sealed class PersonState extends Equatable {
   final String name;
 
   final int age;
